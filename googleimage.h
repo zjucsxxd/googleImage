@@ -6,17 +6,20 @@
 class QString;
 class QNetworkReply;
 class QNetworkAccessManager;
+class QCoreApplication;
 
 class googleimage : public QObject
 {
     Q_OBJECT
 public:
-    googleimage(int argc, char* argv[]);
+//    googleimage(int argc, char* argv[]);
+    googleimage(QCoreApplication*, int , char* []);
     ~googleimage();
 
     googleimage& accessJSON();
 
 signals:
+    void myTimeout();
 
 public slots:
     void downloadJSON(QNetworkReply*);

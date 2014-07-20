@@ -1,0 +1,56 @@
+__Purpose__
+>>> command line,, keywords txt,,
+>>> feedback,, google image,, api,, pictures,, save to local
+
+__modules__
+>>> __IO__,, read local file,, save to local,, 
+    >>> Q: What object,, QFile?
+>>> __Network__,, network,, url,, json,, fetch picture,,
+    >>> Q: QNetworkAccessManager,, QNetworkReply?
+>>> __manipulate__,, manipulate json,, 
+    >>> Q: How?
+
+__idea__
+>>> QHash/QMap,, QNetworkReply
+>>> QJson,, QNetworkReply
+
+mpic -> stream -> mfile
+
+
+Q: 
+>>> Why the program exit unexpectedly?
+@:
+>>> __candidate__
+    >>> pointer problem,,
+Wong: 
+>>> 
+
+Q: 
+>>> Why the picture is failed to be read?
+@:
+>>> 
+Wong: 
+>>> __test__,, test only download picture from internet,, 
+>>> __time__,, time is not enough to download,,
+
+__structure__
+>>> __qt pro__
+    >>> console app,, 
+    >>> Q: Passing in?
+	Wong: 
+	>>> __properties__,, word name,, save location,,
+>>> __IO__
+>>> __Network__
+>>> __manipulate__
+
+
+Q: 
+>>> Why I inherit QObject?
+Wong: 
+>>> signal and slot mechanism
+
+
+Q: 
+>>> Why cannot stop?
+Wong: 
+>>> 

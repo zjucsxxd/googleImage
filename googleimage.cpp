@@ -6,8 +6,9 @@
 #include <QStringList>
 #include <QFile>
 #include <QByteArray>
+#include <QCoreApplication>
 
-googleimage::googleimage(int argc, char *argv[])
+googleimage::googleimage(QCoreApplication* app, int argc, char *argv[])
 {
     initialName(argc, argv);
 
@@ -18,6 +19,9 @@ googleimage::googleimage(int argc, char *argv[])
              this, SLOT(downloadJSON(QNetworkReply*)));
     connect( urlAccess, SIGNAL(finished(QNetworkReply*)),
              this, SLOT(downloadFile(QNetworkReply*)));
+
+    connect( this, SIGNAL(myTimeout()),
+             app, SLOT(quit()) );
 }
 
 googleimage::~googleimage()
@@ -49,6 +53,7 @@ void googleimage::downloadJSON(QNetworkReply* reply)
         }
     }
 
+    return;
 }
 
 void googleimage::downloadFile(QNetworkReply* reply)
@@ -65,6 +70,12 @@ void googleimage::downloadFile(QNetworkReply* reply)
     mfile.write(tStream);
     mfile.flush();
     mfile.close();
+
+    qDebug() << "Path: " << outName;
+
+    emit myTimeout();
+
+    return;
 
 }
 
